@@ -52,4 +52,23 @@ This project demonstrates real-world concepts such as authentication, transactio
 ---
 
 ## 📂 Project Structure
-
+bank-management-system/
+├── app.py
+├── database.py
+├── config.py
+├── static/
+│ └── css/
+│ └── style.css
+├── templates/
+│ ├── base.html
+│ ├── login.html
+│ ├── signup.html
+│ ├── dashboard.html
+│ ├── deposit.html
+│ ├── withdraw.html
+│ ├── transfer.html
+│ ├── confirm_withdraw.html
+│ ├── confirm_transfer.html
+│ ├── transactions.html
+│ └── mini_statement.html
+└── README.md
