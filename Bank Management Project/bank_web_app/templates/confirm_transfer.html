@@ -1,0 +1,37 @@
+
+<!-- #confirm_transfer.html -->
+
+{% extends "base.html" %}
+{% block title %}Confirm Transfer{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-body text-center">
+                <h4 class="mb-3">Confirm Transfer</h4>
+
+                <p>
+                    Are you sure you want to transfer  
+                    <strong>₹ {{ amount }}</strong><br>
+                    to account <strong>{{ receiver_account }}</strong>  
+                    ({{ receiver_username }})?
+                </p>
+
+                <form method="post" action="/confirm-transfer">
+                    <input type="hidden" name="amount" value="{{ amount }}">
+                    <input type="hidden" name="receiver_account" value="{{ receiver_account }}">
+
+                    <button class="btn btn-danger me-2">
+                        Confirm
+                    </button>
+
+                    <a href="/dashboard" class="btn btn-secondary">
+                        Cancel
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

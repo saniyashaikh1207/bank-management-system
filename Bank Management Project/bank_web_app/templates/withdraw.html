@@ -1,0 +1,25 @@
+<!#withdraw.html>
+
+{% extends "base.html" %}
+{% block title %}Withdraw{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow">
+            <div class="card-body">
+                <h4 class="mb-3 text-center">Withdraw Amount</h4>
+
+                {% if error %}
+                    <div class="alert alert-danger">{{ error }}</div>
+                {% endif %}
+
+                <form method="post">
+                    <input type="number" name="amount" class="form-control mb-3" placeholder="Enter amount" required>
+                    <button class="btn btn-warning w-100">Withdraw</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

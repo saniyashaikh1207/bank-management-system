@@ -1,0 +1,179 @@
+/*style.css*/ 
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #e8f0fb, #c8dcf2);
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #0a3d78 !important;
+}
+
+/*Login Page*/
+.login-page {
+    height: calc(100vh - 56px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    width: 380px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.login-heading {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #0a3d78;
+}
+
+.login-card input {
+    background-color: #f1f3f5;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.login-btn {
+    background-color: #0a3d78;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.login-btn:hover {
+    background-color: #083364;
+}
+
+/* DASHBOARD LAYOUT */
+.dashboard-wrapper {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.welcome-text {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #0a3d78;
+}
+
+/* CARDS*/
+.balance-card,
+.transaction-card {
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.12),
+        0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.balance-card:hover,
+.transaction-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 16px 32px rgba(0,0,0,0.18),
+        0 6px 14px rgba(0,0,0,0.12);
+}
+
+.balance-amount {
+    font-size: 34px;
+    font-weight: 600;
+    color: #198754;
+}
+
+.section-heading {
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #0a3d78;
+}
+
+/* TABLE (MINI STATEMENT) */
+.table thead {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.table td:last-child {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.table tbody tr:hover {
+    background-color: #f4f8ff;
+}
+
+.view-link {
+    font-size: 14px;
+    text-decoration: none;
+    color: #0d6efd;
+}
+
+/* ACTION BUTTONS (ENHANCED) */
+.action-row {
+    margin-top: 15px;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+/* Deposit */
+.btn-outline-primary {
+    color: #0d6efd;
+    border: 2px solid #0d6efd;
+}
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* Withdraw (stronger yellow) */
+.btn-outline-warning {
+    color: #c78a00;
+    border: 2px solid #f0ad00;
+}
+.btn-outline-warning:hover {
+    background-color: #f0ad00;
+    color: #000;
+}
+
+/* Transfer */
+.btn-outline-success {
+    color: #198754;
+    border: 2px solid #198754;
+}
+.btn-outline-success:hover {
+    background-color: #198754;
+    color: #fff;
+}
+
+/* History */
+.btn-outline-dark {
+    color: #343a40;
+    border: 2px solid #343a40;
+}
+.btn-outline-dark:hover {
+    background-color: #343a40;
+    color: #fff;
+}

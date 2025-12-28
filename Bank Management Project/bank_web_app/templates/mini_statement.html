@@ -1,0 +1,39 @@
+
+
+<!-- mini_statement.html -->
+{% extends "base.html" %}
+{% block title %}Mini Statement{% endblock %}
+
+{% block content %}
+<div class="card shadow">
+    <div class="card-body">
+        <h4 class="mb-3">Mini Statement (Last 5 Transactions)</h4>
+
+        {% if records %}
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Related Account</th>
+                <th>Date</th>
+            </tr>
+
+            {% for row in records %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>₹ {{ row[1] }}</td>
+                <td>{{ row[2] or "-" }}</td>
+                <td>{{ row[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>No recent transactions.</p>
+        {% endif %}
+
+        <a href="/dashboard" class="btn btn-secondary mt-3">
+            Back to Dashboard
+        </a>
+    </div>
+</div>
+{% endblock %}

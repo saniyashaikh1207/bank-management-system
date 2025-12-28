@@ -1,0 +1,33 @@
+
+<!-- #confirm_withdraw.html -->
+{% extends "base.html" %}
+{% block title %}Confirm Withdraw{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow">
+            <div class="card-body text-center">
+                <h4 class="mb-3">Confirm Withdrawal</h4>
+
+                <p>
+                    Are you sure you want to withdraw  
+                    <strong>₹ {{ amount }}</strong> ?
+                </p>
+
+                <form method="post" action="/confirm-withdraw">
+                    <input type="hidden" name="amount" value="{{ amount }}">
+
+                    <button class="btn btn-danger me-2">
+                        Confirm
+                    </button>
+
+                    <a href="/dashboard" class="btn btn-secondary">
+                        Cancel
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

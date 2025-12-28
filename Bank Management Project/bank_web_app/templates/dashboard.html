@@ -1,0 +1,83 @@
+<! dashboard.html>
+
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+
+    <h5 class="welcome-text">
+        Welcome, <strong>{{ name }}</strong>
+    </h5>
+
+    <!-- TOP SECTION -->
+    <div class="row g-4 mb-4">
+
+        <!-- BALANCE CARD -->
+        <div class="col-md-4">
+            <div class="card balance-card shadow-sm">
+                <div class="card-body text-center">
+                    <p class="text-muted mb-1">Current Balance</p>
+                    <h2 class="balance-amount">₹ {{ balance }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRANSACTION CARD -->
+        <div class="col-md-8">
+            <div class="card shadow-sm transaction-card">
+                <div class="card-body">
+                    <h6 class="mb-3 section-heading">Recent Transactions</h6>
+
+                    {% if recent_txn %}
+                    <div class="table-responsive">
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr class="table-header">
+                                    <th>Type</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in recent_txn %}
+                                <tr>
+                                    <td>{{ row[0] }}</td>
+                                    <td>₹ {{ row[1] }}</td>
+                                    <td class="text-muted">
+                                        {{ row[2].strftime("%d %b %Y, %I:%M %p") }}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <a href="/transactions" class="view-link">View full history</a>
+                    {% else %}
+                        <p class="text-muted">No recent transactions</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="row g-3 action-row">
+        <div class="col-md-3">
+            <a href="/deposit" class="btn action-btn btn-outline-primary">Deposit</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/withdraw" class="btn action-btn btn-outline-warning">Withdraw</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/transfer" class="btn action-btn btn-outline-success">Transfer</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/transactions" class="btn action-btn btn-outline-dark">History</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
